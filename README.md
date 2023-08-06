@@ -22,3 +22,36 @@ LEFT JOIN Pokedex p
   ON p.ID = cpn.PokedexID
 WHERE p.Pokemon = 'Pikachu'
 ```
+
+Find all attributes associated with Cards:
+```sql
+SELECT DISTINCT
+  AttributeType
+  ,AttributeValue
+FROM CardAttributes
+ORDER BY AttributeType, AttributeValue
+```
+
+Find info on pokemon of a specific attribute:
+```sql
+SELECT
+  c.ID
+  ,c.CardIndex
+  ,c.CardName
+  ,ca.AttributeValue
+  ,c.LargeImage
+FROM Cards c
+LEFT JOIN CardAttributes ca
+  ON c.ID = ca.CardID
+WHERE ca.AttributeValue = 'flying'
+```
+
+Find hiest attack damage per modifier
+```sql
+SELECT
+  DamageMod
+  ,MAX(Damage)
+FROM Attacks
+GROUP BY DamageMod
+ORDER BY DamageMod
+```
