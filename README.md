@@ -46,7 +46,7 @@ LEFT JOIN CardAttributes ca
 WHERE ca.AttributeValue = 'flying'
 ```
 
-Find hiest attack damage per modifier
+Find highest attack damage per modifier
 ```sql
 SELECT
   DamageMod
