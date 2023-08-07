@@ -62,9 +62,8 @@ SELECT
   c.ID
   ,c.CardIndex
   ,c.CardName
-  ,ca.AttributeValue
   ,c.LargeImage
-	,w.id
+  ,w.id
 FROM Cards c
 LEFT JOIN Weaknesses w
 	ON c.ID = w.CardID
