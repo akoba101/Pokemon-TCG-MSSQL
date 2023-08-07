@@ -46,7 +46,7 @@ LEFT JOIN CardAttributes ca
 WHERE ca.AttributeValue = 'flying'
 ```
 
-Find highest attack damage per modifier
+Find highest attack damage per modifier:
 ```sql
 SELECT
   DamageMod
@@ -54,4 +54,20 @@ SELECT
 FROM Attacks
 GROUP BY DamageMod
 ORDER BY DamageMod
+```
+
+Find a list of cards where the pokemon has no weaknesses:
+```sql
+SELECT
+  c.ID
+  ,c.CardIndex
+  ,c.CardName
+  ,ca.AttributeValue
+  ,c.LargeImage
+	,w.id
+FROM Cards c
+LEFT JOIN Weaknesses w
+	ON c.ID = w.CardID
+WHERE w.ID IS NULL
+AND c.SuperType = 'Pokemon'
 ```
