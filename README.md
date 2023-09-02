@@ -1,5 +1,5 @@
 # Pokemon-TCG-MSSQL
-Conversion of a JSON library of Pokemon TCG cards to an MS SQL Server database from the following repository:
+Conversion of a JSON library of Pokemon TCG cards to an MS SQL Server 2022 database from the following repository:
 
 https://github.com/PokemonTCG/pokemon-tcg-data
 
